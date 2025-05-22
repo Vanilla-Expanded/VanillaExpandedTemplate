@@ -2,29 +2,29 @@
 
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <TargetFramework>net472</TargetFramework> <!-- Ensure this matches the original framework version -->
+    <TargetFramework>net472</TargetFramework>
     <RootNamespace>ChangeName</RootNamespace>
     <AssemblyName>ChangeName</AssemblyName>
     <LangVersion>latest</LangVersion>
     <Deterministic>true</Deterministic>
-    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath> <!-- Prevent appending target framework to the output path -->
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
 
-  <!-- Debug configuration -->
+ 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <Optimize>true</Optimize>
-    <OutputPath>..\..\Assemblies\</OutputPath> <!-- Output directly to Assemblies -->
+    <OutputPath>..\..\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>none</DebugType>
-    <WarningLevel>2</WarningLevel> <!-- Set to 'none' to exclude debug info -->
+    <WarningLevel>2</WarningLevel>
   </PropertyGroup>
 
-  <!-- Release configuration -->
+ 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <Optimize>true</Optimize>
-    <OutputPath>..\..\Assemblies\</OutputPath> <!-- Output directly to Assemblies -->
+    <OutputPath>..\..\Assemblies\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
-    <DebugType>none</DebugType> <!-- Set to 'none' to exclude debug info -->
+    <DebugType>none</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -54,7 +54,7 @@
   </ItemGroup>
 
   <PropertyGroup>
-    <!-- Disable automatic generation of assembly attributes -->
+   
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 
