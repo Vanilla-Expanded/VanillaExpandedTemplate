@@ -60,7 +60,7 @@ echo Updating About.xml in '%newfoldername%'...
     ) else if "!line:~1,11!"=="<packageId>" (
         echo 	^<packageId^>%packageid%^</packageId^>
     ) else (
-        echo !line!
+        echo(!line!
     )
 )) > About\About.xml.tmp
 move /y About\About.xml.tmp About\About.xml > nul
@@ -86,7 +86,7 @@ for /r "%sourceSubDir%" %%f in (*.cs *.xml *.csproj *.sln) do (
     (for /f "usebackq delims=" %%l in ("%%f") do (
         set "line=%%l"
         set "line=!line:ChangeName=%namespace%!"
-        echo !line!
+        echo(!line!
     )) > "%%f.tmp"
     move /y "%%f.tmp" "%%f" > nul
     if %errorlevel% neq 0 (
