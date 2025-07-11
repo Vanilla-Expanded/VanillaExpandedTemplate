@@ -1,5 +1,5 @@
 <ModMetaData>
-	<name></name>
+	<name>Vanilla Template Expanded</name>
 	<author>Oskar Potocki, Taranchuk, Sarg Bjornson</author>
 	<supportedVersions>
 		<li>1.5</li>
@@ -29,6 +29,6 @@
 		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
 	</loadAfter>
 
-	<packageId></packageId>
+	<packageId>OskarPotocki.VanillaTemplateExpanded</packageId>
 	<description></description>
 </ModMetaData>
