@@ -13,7 +13,7 @@
             "command": "dotnet",
             "args": [
                 "build",
-                "${workspaceFolder}/1.5/Source/ModSourceTemplate.csproj"
+                "${workspaceFolder}/1.6/Source/ModSourceTemplate.csproj"
             ],
             "problemMatcher": "$msCompile",
             "group": {
