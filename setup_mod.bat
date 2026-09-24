@@ -123,8 +123,8 @@ for /d /r "%sourceSubDir%" %%d in (*ChangeName*) do (
 echo Folder renaming complete.
 
 echo.
-echo Replacing 'ModSourceTemplate' with '!namespace!' in tasks.json files...
-for /f "delims=" %%f in ('dir /s /b tasks.json') do (
+echo Replacing 'ModSourceTemplate' with '!namespace!' in tasks.json and settings.json files...
+for /f "delims=" %%f in ('dir /s /b tasks.json settings.json') do (
     echo Updating %%f
     (for /f "usebackq delims=" %%l in ("%%f") do (
         set "line=%%l"
