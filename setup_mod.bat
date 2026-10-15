@@ -129,6 +129,7 @@ for /f "delims=" %%f in ('dir /s /b tasks.json settings.json') do (
     (for /f "usebackq delims=" %%l in ("%%f") do (
         set "line=%%l"
         set "line=!line:ModSourceTemplate=%namespace%!"
+        set "line=!line:ChangeName=%namespace%!"
         echo(!line!
     )) > "%%f.tmp"
     move /y "%%f.tmp" "%%f" > nul
