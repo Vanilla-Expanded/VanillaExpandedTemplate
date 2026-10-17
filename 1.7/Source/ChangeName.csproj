@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputPath>../Assemblies</OutputPath>
+    <OutputPath>obj\deploy\</OutputPath>
     <TargetFramework>net10.0</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
@@ -41,8 +41,11 @@
     </Reference>
   </ItemGroup>
 
-  <Target Name="KillRimWorld" BeforeTargets="BeforeCompile">
-    <Exec Command="taskkill /F /IM RimWorld.exe" IgnoreExitCode="true" IgnoreStandardErrorWarningFormat="true" />
+  <Target Name="DeployToAssemblies" AfterTargets="Build">
+    <Exec Command='if not exist "$(MSBuildThisFileDirectory)obj\trash" mkdir "$(MSBuildThisFileDirectory)obj\trash"' IgnoreExitCode="true" />
+    <Exec Command='del /f /q "$(MSBuildThisFileDirectory)obj\trash\$(AssemblyName).dll*" >nul 2>nul' IgnoreExitCode="true" />
+    <Exec Command='if exist "$(MSBuildThisFileDirectory)..\Assemblies\$(AssemblyName).dll*" move /y "$(MSBuildThisFileDirectory)..\Assemblies\$(AssemblyName).dll*" "$(MSBuildThisFileDirectory)obj\trash\"' IgnoreExitCode="true" />
+    <Copy SourceFiles="$(OutDir)$(AssemblyName).dll" DestinationFiles="$(MSBuildThisFileDirectory)..\Assemblies\$(AssemblyName).dll" />
   </Target>
 
 </Project>
